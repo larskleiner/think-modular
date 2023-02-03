@@ -1,0 +1,20 @@
+uuid: 35a91e6a-a269-4adc-a3b4-914f2bfd2c05
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: GUnfS520-hMK4tqI6vW3_QhheiPNvlIzGTUuba0_5h4
+id: node.field_hide_enrollments
+field_name: field_hide_enrollments
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

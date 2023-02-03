@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    image: mysql:5.7
+    container_name: "${PROJECT_NAME}_mysqldb"
+    stop_grace_period: 30s
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_PASSWORD
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
+  drupal:
+    build:
+      dockerfile: docker/drupal/Dockerfile
+      context: .
+    image: ${PROJECT_NAME}
+    container_name: "${PROJECT_NAME}_drupal"
+    depends_on:
+      - "mysqldb"
+    ports:
+      - '80:8080'
+    restart: on-failure
+    environment:
+      DB_HOST: $DB_HOST
+      DB_USER: $DB_USER
+      DB_PASSWORD: $DB_PASSWORD
+      DB_NAME: $DB_NAME
+      DB_DRIVER: $DB_DRIVER
+      REDIS_HOST: $REDIS_HOST
+      ENVIRONMENT: $ENVIRONMENT
+      DRUPAL_UUID: $DRUPAL_UUID
+    volumes:
+      - ./:/var/www/html
+  redis:
+    build:
+      dockerfile: docker/redis/Dockerfile
+      context: .
+    image: ${PROJECT_NAME}-redis
+    container_name: "${PROJECT_NAME}_redis"
+    ports:
+      - "6379:6379"

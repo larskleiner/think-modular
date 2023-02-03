@@ -1,0 +1,27 @@
+uuid: ba3c6f3c-45ef-4e94-b779-82673c42b420
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - socialbase
+_core:
+  default_config_hash: lVp1cEY88Sx8XZuLE3N_x5gtsqjQGu5QNvdBcyfGd0s
+id: mainnavigation
+theme: socialbase
+region: header
+weight: 4
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

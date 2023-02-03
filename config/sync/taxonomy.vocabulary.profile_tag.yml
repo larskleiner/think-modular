@@ -1,0 +1,13 @@
+uuid: b3de3f69-b0c5-4b6c-b420-096b894c5db9
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - social_profile
+_core:
+  default_config_hash: DBkIHLQvCFCZlxcb3pfh0qKjTwmKldGXINvJWK2pmJw
+name: 'Profile tag'
+vid: profile_tag
+description: 'CM can tag a user, giving options on filtering / searching users.'
+weight: 0
