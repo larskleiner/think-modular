@@ -3,7 +3,7 @@
 include .env
 export
 
-setup: destroy build start install update generate-login-url ## Setup application from scratch.
+setup: destroy build start install generate-login-url ## Setup application from scratch.
 
 destroy: ## Destroy application.
 	docker-compose down --remove-orphans

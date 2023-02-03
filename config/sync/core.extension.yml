@@ -54,6 +54,7 @@ module:
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
   jquery_ui_touch_punch: 0
+  lazy: 0
   like_and_dislike: 0
   link: 0
   log_stdout: 0
